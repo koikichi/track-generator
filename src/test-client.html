@@ -1,0 +1,91 @@
+<html>
+
+<head>
+    <title>Websocket Output</title>
+</head>
+
+<body>
+    <!-- <p>Track #1</p>
+        <div>
+          <label> Id  : </label> 
+          <label id="t1_id"></label> 
+        </div>
+        <div>
+          <label> Lat : </label> 
+          <label id="t1_lat"></label> 
+        </div>
+        <div>
+          <label> Long: </label> 
+          <label id="t1_long"></label> 
+        </div>
+        <div>
+          <label> type: </label> 
+          <label id="t1_type"></label> 
+        </div>
+        <div>
+          <label> cat : </label> 
+          <label id="t1_cat"></label> 
+        </div>
+        <p>Track #2</p>
+        <div>
+          <label> Id  : </label> 
+          <label id="t2_id"></label> 
+        </div>
+        <div>
+          <label> Lat : </label> 
+          <label id="t2_lat"></label> 
+        </div>
+        <div>
+          <label> Long: </label> 
+          <label id="t2_long"></label> 
+        </div>
+        <div>
+          <label> type: </label> 
+          <label id="t2_type"></label> 
+        </div>
+        <div>
+          <label> cat : </label> 
+          <label id="t2_cat"></label> 
+        </div> -->
+</body>
+
+<script>
+    var ws = new WebSocket('ws://localhost:8181');
+    ws.onopen = function () {
+        console.log('websocket is connected ...')
+        // ws.send('connected');
+    }
+    ws.onclose = function () {
+        console.log('websocket is disconnected ...')
+        // ws.send('disconnected');
+        // ws.close();
+    }
+    ws.onmessage = function (ev) {
+        console.log(ev)
+        jsondata = JSON.parse(ev.data)
+        console.log(jsondata)
+        // console.log("id = " + jsondata.track_id);
+        // console.log("lat = " + jsondata.lat);
+        // console.log("long = " + jsondata.long);
+        // console.log("type = " + jsondata.type);
+        // console.log("cat = " + jsondata.category);
+        // if (jsondata.track_id == 123) {
+        //     document.getElementById("t1_id").innerText = jsondata.track_id
+        //     document.getElementById("t1_lat").innerText = jsondata.lat
+        //     document.getElementById("t1_long").innerText = jsondata.long
+        //     document.getElementById("t1_type").innerText = jsondata.type
+        //     document.getElementById("t1_cat").innerText = jsondata.category
+        // } else {
+        //     document.getElementById("t2_id").innerText = jsondata.track_id
+        //     document.getElementById("t2_lat").innerText = jsondata.lat
+        //     document.getElementById("t2_long").innerText = jsondata.long
+        //     document.getElementById("t2_type").innerText = jsondata.type
+        //     document.getElementById("t2_cat").innerText = jsondata.category
+        // }
+
+        // document.getElementById("t1_long").innerText(jsondata.track_id)
+    }
+
+</script>
+
+</html>
